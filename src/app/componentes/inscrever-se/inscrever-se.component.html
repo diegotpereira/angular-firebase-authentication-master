@@ -1,0 +1,40 @@
+<div class="displayTable">
+    <div class="displayTableCell">
+
+        <div class="authBlock">
+            <h3>Cadastre-se</h3>
+
+            <div class="formGroup">
+                <input type="email" class="formControl" placeholder="Endereço de email" #usuarioEmail required>
+            </div>
+            <div class="formGroup">
+                <input type="password" class="formControl" placeholder="Senha" #usuarioSenha required>
+            </div>
+            <div class="formGroup">
+                <input type="button" class="btn btnPrimary" value="Cadastre-se" (click)="authService.InscreverSe(usuarioEmail.value, usuarioSenha.value)">
+            </div>
+            <div class="formGroup">
+                <span class="or"><span class="orInner">Ou</span></span>
+            </div>
+            <!-- Chamando GoogleAuth Api de AuthService -->
+            <div class="formGroup">
+                <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+                <i class="fab fa-google-plus-g"></i>
+                Entrar com conta Google
+            </button>
+            </div>
+
+            <!-- Continue com Facebook -->
+            <div class="formGroup">
+                <button type="button" class="btn facebookBtn" (click)="authService.FacebookAuth()">
+                <i class="fab fa-facebook"></i>
+                Entrar com conta Facebook
+            </button>
+            </div>
+        </div>
+
+        <div class="redirectToLogin">
+            <span>Não tem uma conta?<span class="redirect" routerLink="/registrar-usuario">Inscrever-se</span></span>
+        </div>
+    </div>
+</div>

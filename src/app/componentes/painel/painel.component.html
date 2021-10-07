@@ -1,0 +1,55 @@
+<!-- Navegação superior -->
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0">
+        <img class="brand-logo" src="assets/logo-positronx-white.svg" alt="positronX.io Logo">
+    </a>
+</nav>
+
+<!-- Navegação da barra lateral -->
+<div class="container-fluid">
+    <div class="row">
+
+        <nav class="col-md-2 d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active">
+                            <i class="fas fa-user"></i>Perfil de Usuário
+                        </a>
+                    </li>
+
+                    <!-- Chamando Sair() Api de AuthService -->
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="authService.Sair()">
+                            <i class="fas fa-sign-out-alt"></i>Sair
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Conteúdo principal -->
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+            <div class="inner-adjust">
+
+                <div class="pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Perfil de Usuário</h1>
+                </div>
+                <!-- mostrar dados do usuário quando conectado -->
+                <div class="row" *ngIf="authService.usuarioDado as usuario">
+                    <div class="col-md-12">
+                        <div class="media">
+                            <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(usuario.fotoUrl) ? usuario.fotoUrl : '/assets/dummy-user.png'}}" alt="{{usuario.nomeEmExibicao}}">
+                            <div class="media-body">
+                                <h1>Olá: <strong>{{(usuario.nomeEmExibicao) ? usuario.nomeEmExibicao : 'usuario'}}</strong></h1>
+                                <p>Usuário ID: <strong>{{usuario.uid}}</strong></p>
+                                <p>Email: <strong>{{usuario.email}}</strong></p>
+                                <p>Email Verificado: <strong>{{usuario.emailVerificado}}</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
