@@ -36,15 +36,15 @@
                     <h1 class="h2">Perfil de Usuário</h1>
                 </div>
                 <!-- mostrar dados do usuário quando conectado -->
-                <div class="row" *ngIf="authService.usuarioDado as usuario">
+                <div class="row" *ngIf="authService.usuarioDado as user">
                     <div class="col-md-12">
                         <div class="media">
-                            <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(usuario.fotoUrl) ? usuario.fotoUrl : '/assets/dummy-user.png'}}" alt="{{usuario.nomeEmExibicao}}">
+                            <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.fotoUrl) ? user.fotoUrl : '/assets/dummy-user.png'}}" alt="{{user.nomeEmExibicao}}">
                             <div class="media-body">
-                                <h1>Olá: <strong>{{(usuario.nomeEmExibicao) ? usuario.nomeEmExibicao : 'usuario'}}</strong></h1>
-                                <p>Usuário ID: <strong>{{usuario.uid}}</strong></p>
-                                <p>Email: <strong>{{usuario.email}}</strong></p>
-                                <p>Email Verificado: <strong>{{usuario.emailVerificado}}</strong></p>
+                                <h1>Olá: <strong>{{(user.nomeEmExibicao) ? user.nomeEmExibicao : 'Usuário'}}</strong></h1>
+                                <p>Usuário ID: <strong>{{user.uid}}</strong></p>
+                                <p>Email: <strong>{{user.email}}</strong></p>
+                                <p>Email Verificado: <strong>{{user.emailVerificado}}</strong></p>
                             </div>
                         </div>
                     </div>

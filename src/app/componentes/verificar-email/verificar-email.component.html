@@ -4,8 +4,8 @@
         <div class="authBlock">
             <h3>Obrigado por se cadastrar</h3>
 
-            <div class="formGroup" *ngIf="authService.usuarioDado as usuario">
-                <p class="text-center">Enviamos um email de confirmação para <strong>{{usuario.email}}</strong>.</p>
+            <div class="formGroup" *ngIf="authService.usuarioDado as user">
+                <p class="text-center">Enviamos um email de confirmação para <strong>{{user.email}}</strong>.</p>
                 <p class="text-center">Verifique seu e-mail e clique no link para verificar seu endereço de e-mail.</p>
             </div>
             <!-- Chamando o método EnviarMensagemDeVerificacao() usando authService Api -->
